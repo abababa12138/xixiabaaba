@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>罗茜</title>
+    <style>
+        /*子代选择器（选中儿子不选中孙子）*/
+        .yijicaidan>li{
+            /*移除列表项前面的默认标记*/
+            list-style: none;
+            background-color: #eee;
+           
+            margin: 3px 3px;
+            width: 80px;
+            height: 40px;
+            /*将容器定义为弹性容器*/
+            display: flex;
+            /*元素的横向位置（不改变小盒子排列顺序）居中*/
+            justify-content: center;
+            /*元素的垂直位置（不改变小盒子排列顺序）居中*/
+            align-items: center;
+            /*生成像素为8的圆角*/
+            border-radius: 8px;
+        }
+        .yijicaidan>li:hover>a{
+            color:#eee
+        }
+        a{
+            font-size: 20px;
+            color: black;
+            /*移除文本装饰（超链接下划线）*/
+            text-decoration: none;
+        }
+        .yijihezi{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            top: 15px;
+            right:800px;
+           
+         }
+        .yijicaidan{
+            display: flex;
+            flex-direction: column;
+            width: 80px;
+           
+        }
+        .erjihezi{
+            /*将元素的定位位置设置为绝对位置*/
+            position: absolute;
+            /*元素距离右边缘700像素*/
+            right: 700px;
+        }
+        .erjihezi{
+            background-color: #eee;
+            width: 80px;
+            height: 120px;
+            border-radius: 8px;
+            display: none;
+        }
+        .erjicaidan>li{
+            list-style: none;
+            margin: 10px 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .erjicaidan{
+            padding: 0px;
+        }
+        .yijicaidan>li:hover{
+            background-color: pink;
+            transition: width 300ms ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+        }
+        .yijicaidan>li:hover>.erjihezi{
+            /*设置元素的显示类型为块级元素（block）。块级元素会独占一行，其宽度默认填满其父元素的宽度。*/
+            display:block;
+            background-color: pink;
+             }
+       .erjicaidan>li>a{
+        color: #eee;
+       }
+
+    </style>
+</head>
+<body>
+    <div class="yijihezi">
+        <ul class="yijicaidan">
+            <li>
+                <a href="#">娱乐</a>
+                <div class="erjihezi">
+                    <ul class="erjicaidan">
+                        <li><a href="">音乐</a></li>
+                        <li><a href="">电影</a></li>
+                        <li><a href="">游戏</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="#">科技</a>
+                <div class="erjihezi">
+                    <ul class="erjicaidan">
+                        <li><a href="">数码</a></li>
+                        <li><a href="">手机</a></li>
+                        <li><a href="">电脑</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="#">美食</a>
+                <div class="erjihezi">
+                    <ul class="erjicaidan">
+                        <li><a href="">甜品</a></li>
+                        <li><a href="">火锅</a></li>
+                        <li><a href="">烧烤</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>
